@@ -4,3 +4,83 @@
 *.ptx
 *.cubin
 *.fatbin
+
+# CLion IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+cmake-build-*/
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# C++ build artifacts
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Dependency directories
+build/
+dist/
+tmp/
+
+# Coverage data
+*.gcno
+*.gcda
+*.gcov
+
+# Profiling data
+gmon.out
+callgrind.out*
+cachegrind.out*
+massif.out*
+
+# WSL-specific
+*.swp
+*~
+
+# Generated documentation
+doc/
+docs/
+
+# Dataset files (uncomment if not wanting to version control datasets)
+# *.csv
+# *.json
+
+# Python virtual environments (if using Python for any part)
+venv/
+env/
+.env/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
