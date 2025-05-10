@@ -34,12 +34,14 @@ add_custom_target(generate_time_series_ptx
         VERBATIM
 )
 
-# Generate optimization report
-add_custom_target(time_series_optimization_report
-        COMMAND ${CMAKE_CUDA_COMPILER} -ccbin g++ --ptxas-options=-v
+# Generate comprehensive optimization report with SASS output
+add_custom_target(comprehensive_report
+        COMMAND ${CMAKE_CUDA_COMPILER} -ccbin g++ -arch=sm_86 --ptxas-options=-v
+        --keep-device-functions -lineinfo
         ${CMAKE_CURRENT_SOURCE_DIR}/main.cu
-        -o ${CMAKE_CURRENT_BINARY_DIR}/main
+        -o ${CMAKE_CURRENT_BINARY_DIR}/main_optimized.ptx
+        > ${CMAKE_CURRENT_BINARY_DIR}/ptxas_report.txt 2>&1
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        COMMENT "Generating optimization report for energy time-series"
+        COMMENT "Generating comprehensive optimization report with SASS code"
         VERBATIM
 )
